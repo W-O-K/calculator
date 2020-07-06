@@ -5,7 +5,8 @@
 body{
 	margin-top: 25vh;
 }
-#calculator{
+/*The calculator box*/
+#calc{
 	background-color: #b9cbdc;
 	width: 350px;
 	margin: auto;
@@ -24,6 +25,7 @@ body{
 	grid-template-columns: 25% 25% 25% 25%;
 	grid-template-rows: 45px 45px 45px 45px;
 }
+/*borrowed some styling code from https://bootsnipp.com/snippets/kW9gA*/
 /* Inset shadow on the screen to create indent */
 .top .screen {
 	padding: 0 10px;
@@ -40,11 +42,8 @@ body{
 	letter-spacing: 1px;
 }
 
-/* Applying same to the keys */
-.keys span, .top span {
-	position: relative;
-	top: 0;
-
+/* Applying style to the keys */
+.keys input, .top input {
 	cursor: pointer;
 	
 	margin: 4px;
@@ -55,66 +54,41 @@ body{
 	
 	color: #888;
 	line-height: 36px;
-	font-weight: 500;
+	font-weight: 700;
 	text-align: center;
-	
-	/* prevent selection of text inside keys */
-	user-select: none;
-	
-	/* Smoothing out hover and active states using css3 transitions */
+	/* Smoothing out hover and active states*/
 	transition: all 0.2s ease;
 }
-
-/* style different type of keys (operators/evaluate/clear) differently */
-.keys span.operator {
-	background: #FFF0F5;
+/* style operators,evaluate & clear keys differently */
+input.operator {
+	background: #7a7a7a;
+	color:white;
 }
-
-.keys span.eval {
-	background: #f1ff92;
+input.eval {
+	background: #ffba23;
 	box-shadow: 0px 4px #9da853;
 	color: #888e5f;
 }
-
-.top span.clear {
-	background: #ff9fa8;
+input.clear {
+	background: #ff46a3;
 	box-shadow: 0px 4px #ff7c87;
 	color: white;
 	margin-top: 0;
 }
-
-
-/* Some hover effects */
-.keys span:hover {
+/* Hover Effects*/
+input:hover {
 	background: #9c89f6;
 	box-shadow: 0px 4px #6b54d3;
 	color: white;
 }
 
-.keys span.eval:hover {
+.eval:hover {
 	background: #abb850;
 	box-shadow: 0px 4px #717a33;
 	color: #ffffff;
 }
-
-.top span.clear:hover {
+.clear:hover {
 	background: #f68991;
 	box-shadow: 0px 4px #d3545d;
 	color: white;
-}
-
-/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
-.keys span:active {
-	box-shadow: 0px 0px #6b54d3;
-	top: 4px;
-}
-
-.keys span.eval:active {
-	box-shadow: 0px 0px #717a33;
-	top: 4px;
-}
-
-.top span.clear:active {
-	top: 4px;
-	box-shadow: 0px 0px #d3545d;
 }
